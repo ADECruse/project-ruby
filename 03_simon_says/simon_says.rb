@@ -12,9 +12,7 @@ def repeat(words, i = 0)
     i.times do
       repeat_words.push words
     end
-
     repeat_words.join(' ')
-
   else
     words + ' ' + words
   end
@@ -23,9 +21,7 @@ end
 def start_of_word(word, i = 0)
   letters = []
   word.each_char { |c| letters.push c }
-
   remove_letters = word.length - i
-
   remove_letters.times do
     letters.pop
   end
@@ -39,15 +35,14 @@ end
 
 def titleize(words)
   capitalize_this = words.split(' ')
-
   capitalized = []
   capitalize_this.each do |c|
-    if (c == 'the' or c == 'and' or c == 'over')
+    if c == 'the' || c == 'and' || c == 'over'
       capitalized.push c
     else
       capitalized.push c.capitalize
     end
-    end
- capitalized.first.capitalize!
- capitalized.join(' ')
+  end
+  capitalized.first.capitalize!
+  capitalized.join(' ')
 end
