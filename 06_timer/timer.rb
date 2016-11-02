@@ -14,14 +14,7 @@ class Timer
   end
 
   def time_string
-    if @seconds == 0
-      "00:00:00"
-    else
-      #hour = (@seconds/3600)
-      #remainder = @seconds%3600
-      timer_display = hour.padded(@seconds/3600) + ':'
-
-    end
-
+    modulo = @seconds % 3600
+    self.padded(@seconds / 3600) + ':' + self.padded(modulo / 60) + ':' + self.padded(modulo % 60)
   end
 end
